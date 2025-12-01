@@ -3,8 +3,8 @@ from observability.tracing import trace
 
 from agents.log_agent import run as log_agent
 from agents.metrics_agent import run as metrics_agent
-from agents.rootcause_agent import run as root_agent
-from agents.fix_agent import run as fix_agent
+from agents.rootcause_agent import analyze_root_cause as root_agent
+from agents.fix_agent import propose_fix as fix_agent
 from agents.report_agent import run as report_agent
 
 from memory.memory_bank import MemoryBank
@@ -31,8 +31,8 @@ class Coordinator:
         # cause, history = root_agent(logs, metrics, trace_id)
         # fix = fix_agent(cause, trace_id)
         
-        cause, history = root_agent(logs, metrics, trace_id, use_gemini=USE_GEMINI)
-        fix = fix_agent(cause, trace_id, use_gemini=USE_GEMINI)
+        cause, history = root_agent(logs, metrics, trace_id)
+        fix = fix_agent(cause, trace_id)
 
         self.memory.save(incident, cause, fix)
 
