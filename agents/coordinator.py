@@ -10,6 +10,9 @@ from agents.report_agent import run as report_agent
 from memory.memory_bank import MemoryBank
 from evaluation.judge import score
 
+import os
+USE_GEMINI = os.environ.get("USE_GEMINI", "1") not in ("0", "false", "False")
+
 class Coordinator:
     def __init__(self):
         self.memory = MemoryBank()
@@ -25,8 +28,11 @@ class Coordinator:
         logs = log_agent(trace_id)
         metrics = metrics_agent(trace_id)
 
-        cause, history = root_agent(logs, metrics, trace_id)
-        fix = fix_agent(cause, trace_id)
+        # cause, history = root_agent(logs, metrics, trace_id)
+        # fix = fix_agent(cause, trace_id)
+        
+        cause, history = root_agent(logs, metrics, trace_id, use_gemini=USE_GEMINI)
+        fix = fix_agent(cause, trace_id, use_gemini=USE_GEMINI)
 
         self.memory.save(incident, cause, fix)
 
