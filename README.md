@@ -14,7 +14,7 @@
 
 AutoOps AI is an **Enterprise AI agent system** designed to automatically investigate operational incidents in cloud applications, analyze logs and metrics, identify root causes, and propose actionable fixes. It leverages **Gemini LLM** as the reasoning engine and demonstrates a **multi-agent architecture**.
 
-This project serves as a **Minimum Viable Product (MVP)** for the Kaggle AI Agents Capstone.
+
 
 ---
 
