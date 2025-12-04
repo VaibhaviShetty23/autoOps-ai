@@ -1,5 +1,8 @@
 # AutoOps AI – Enterprise Incident Response Agent
 
+
+<img width="500" height="500" alt="autoops" src="https://github.com/user-attachments/assets/b0ec3757-9c88-4a84-868d-8be994e7f332" />
+
 **Track:** Enterprise Agents  
 **Course:** 5-Day AI Agents Intensive Course with Google (Nov 10-14, 2025)  
 **Author:** Vaibhavi Shetty  
